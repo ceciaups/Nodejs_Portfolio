@@ -1,7 +1,3 @@
-if (location.protocol != 'https:') {
-  location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-}
-
 window.onload = function() {
   // Variables
   const navBar = document.getElementById("nav-bar");

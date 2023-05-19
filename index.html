@@ -62,18 +62,11 @@
         <h3><span class="highlight-text">My</span> Journey</h3>
         <div class="timeline">
           <div class="tl-container">
-            <div class="tl-item tl-right tl-work" id="iron">
+            <div class="tl-item tl-left tl-work" id="iron">
               <div class="tl-content">
                 <h5>Mathematics Tutor</h5>
                 <div class="tl-date">2022-Present</div>
                 <div class="tl-location"><i class="fa-solid fa-location-dot"></i>Iron Tutor, Toronto</div>
-              </div>
-            </div>
-            <div class="tl-item tl-left tl-work" id="stem">
-              <div class="tl-content">
-                <h5>STEM Teacher</h5>
-                <div class="tl-date">2022-2022</div>
-                <div class="tl-location"><i class="fa-solid fa-location-dot"></i>Genius Camp, Toronto</div>
               </div>
             </div>
             <div class="tl-item tl-right tl-study" id="humber">
@@ -125,7 +118,8 @@
           <div class="skills-item">HTML<img src="images/html.png" alt="HTML"></div>
           <div class="skills-item">CSS<img src="images/css.png" alt="CSS"></div>
           <div class="skills-item">JS<img src="images/js.png" alt="JavaScript"></div>
-          <div class="skills-item">React<img src="images/react.png" alt="React"></div>
+          <div class="skills-item">React.js<img src="images/react.png" alt="React"></div>
+          <div class="skills-item">Pug.js<img src="images/pug.png" alt="Pug"></div>
           <div class="skills-item">PHP<img src="images/php.png" alt="PHP"></div>
           <div class="skills-item">C++<img src="images/cpp.png" alt="C++"></div>
           <div class="skills-item">C#<img src="images/csharp.png" alt="C#"></div>
@@ -134,6 +128,7 @@
           <div class="skills-item">Node.js<img src="images/node-js.png" alt="Node.js"></div>
           <div class="skills-item">ASP.NET<img src="images/aspnet.png" alt="ASP.NET"></div>
           <div class="skills-item">MySQL<img src="images/sql.png" alt="MySQL"></div>
+          <div class="skills-item">MongoDB<img src="images/mongodb.svg" alt="MongoDB"></div>
           <div class="skills-item">VBA<img src="images/excel.png" alt="Excel VBA"></div>
           <div class="skills-item">MATLAB<img src="images/MATLAB.png" alt="MATLAB"></div>
         </div>
@@ -144,15 +139,17 @@
         <h2><span class="highlight-text">My</span> Projects</h2>
         <div class="project-container">
           <input type="radio" name="slider" checked="checked" id="slider-humber" class="slider-radio">
-          <input type="radio" name="slider" id="slider-movie" class="slider-radio">
+          <input type="radio" name="slider" id="slider-timer" class="slider-radio">
           <input type="radio" name="slider" id="slider-sudoku" class="slider-radio">
+          <input type="radio" name="slider" id="slider-movie" class="slider-radio">
           <input type="radio" name="slider" id="slider-catvsdog" class="slider-radio">
           <input type="radio" name="slider" id="slider-fyp" class="slider-radio">
           <div class="project-slider">
             <ul id="slider-ul">
               <li><label for="slider-humber"><img id="project-humber" class="project" src="images/humber-current.jpeg" alt="Recreation of Humber Current"></label></li
-              ><li><label for="slider-movie"><img id="project-movie" class="project" src="images/movie_night.png" alt="Movie Night Web"></label></li
+              ><li><label for="slider-timer"><img id="project-timer" class="project" src="images/timer.png" alt="Timer App"></label></li
               ><li><label for="slider-sudoku"><img id="project-sudoku" class="project" src="images/sudoku.jpeg" alt="Sudoku Web Game"></label></li
+              ><li><label for="slider-movie"><img id="project-movie" class="project" src="images/movie_night.png" alt="Movie Night Web"></label></li
               ><li><label for="slider-catvsdog"><img id="project-catvsdog" class="project" src="images/catvsdog.jpeg" alt="Cat vs Dog Web Game"></label></li
               ><li><label for="slider-fyp"><img id="project-fyp" class="project" src="images/fyp.png" alt="CT Segmentation Software"></label></li>
             </ul>
@@ -167,22 +164,31 @@
                 <a href="https://github.com/ceciaups/Humber_Current" target="_blank"><i class="fa-brands fa-github project-github"></i></a>
               </div>
             </div>
-            <div class="main-project main-movie">
-              <h4>Movie Night</h4>
-              <div class="project-content">A web application takes in two movies and generates ten related movies by ChatGPT API.</div>
-              <div class="project-code">HTML | CSS | JS | Node.js</div>
+            <div class="main-project main-timer">
+              <h4>Timesheet Automation</h4>
+              <div class="project-content">A NPM package allows developer to track project time through terminal using Clockify API.</div>
+              <div class="project-code">Node.js</div>
               <div class="project-link">
-                <a class="button project-button" href="https://movie-night.ceciaups.com" target="_blank">Check It Out!</a>
-                <a href="https://github.com/ceciaups/Movie_Night" target="_blank"><i class="fa-brands fa-github project-github"></i></a>
+                <a class="button project-button" href="https://www.npmjs.com/package/timesheet-automation?activeTab=versions" target="_blank">Check It Out!</a>
+                <a href="https://github.com/ceciaups/Time_Keeper" target="_blank"><i class="fa-brands fa-github project-github"></i></a>
               </div>
             </div>
             <div class="main-project main-sudoku">
               <h4>Sudoku</h4>
-              <div class="project-content">A web sudoku allows users to solve 9*9 sudoku puzzles. There are a million of puzzles, with timer and checker.</div>
+              <div class="project-content">A Node.js webpage allows users to solve 9*9 sudoku puzzles with a PostgreSQL database containing 1 million sudoku puzzles.</div>
               <div class="project-code">HTML | CSS | JS | Node.js | MySQL</div>
               <div class="project-link">
                 <a class="button project-button" href="https://sudoku.ceciaups.com" target="_blank">Check It Out!</a>
                 <a href="https://github.com/ceciaups/Sudoku" target="_blank"><i class="fa-brands fa-github project-github"></i></a>
+              </div>
+            </div>
+            <div class="main-project main-movie">
+              <h4>Movie Night</h4>
+              <div class="project-content">A web application takes in two movies and generates ten related movies by ChatGPT API.</div>
+              <div class="project-code">HTML | CSS | JS | Pug.js | Node.js</div>
+              <div class="project-link">
+                <a class="button project-button" href="https://movie-night.ceciaups.com" target="_blank">Check It Out!</a>
+                <a href="https://github.com/ceciaups/Movie_Night" target="_blank"><i class="fa-brands fa-github project-github"></i></a>
               </div>
             </div>
             <div class="main-project main-catvsdog">

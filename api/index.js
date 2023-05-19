@@ -3,7 +3,8 @@ const http = require("http");
 const nodemailer = require("nodemailer");
 const multiparty = require("multiparty");
 const app = express();
-require("dotenv").config();
+const dotenv = require("dotenv");
+dotenv.config();
 
 app.use(express.static(__dirname + "/../"));
 
@@ -35,8 +36,8 @@ app.post("/send", (req, res) => {
       data[property] = fields[property].toString();
     });
     const mail = {
-      from: 'cecilia980127@gmail.com',
-      to: 'cecilia980127@gmail.com',
+      from: process.env.GMAIL,
+      to: process.env.GMAIL,
       subject: '[Portfolio] New Form submission',
       text: `You have received a new message from ${data.fname} \n` +
       `Email: <${data.femail}> \n` + 

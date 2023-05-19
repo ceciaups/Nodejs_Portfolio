@@ -102,6 +102,7 @@ a:hover, .button:hover {
   --dark-green: #333D29;
   --orange: #D08644;
   --white: #FCF6F6;
+  --project-number: 6;
 }
 
 /* 2. HEADER STYLES */
@@ -409,11 +410,14 @@ header {
 .main-humber::after {
   background-image: url(../images/humber-current.jpeg);
 }
-.main-movie::after {
-  background-image: url(../images/movie_night.png);
+.main-timer::after {
+  background-image: url(../images/timer.png);
 }
 .main-sudoku::after {
   background-image: url(../images/sudoku.jpeg);
+}
+.main-movie::after {
+  background-image: url(../images/movie_night.png);
 }
 .main-catvsdog::after {
   background-image: url(../images/catvsdog.jpeg);
@@ -485,7 +489,7 @@ header {
   display: block;
   position: relative;
   width: 100%;
-  height: max(calc((var(--main-project-height) - (100vw - var(--project-width)) * 0.22) / 4), calc((100vw - var(--project-width)) * 0.22 / 4));
+  height: max(calc((var(--main-project-height) - (100vw - var(--project-width)) * 0.22) / (var(--project-number) - 1)), calc((100vw - var(--project-width)) * 0.22 / (var(--project-number) - 1)));
   transition: all 0.2s;
 }
 .project-slider ul li::after {
@@ -499,7 +503,7 @@ header {
   opacity: 0.5;
 }
 .project-slider ul:hover li {
-  height: max(calc((var(--main-project-height) - (100vw - var(--project-width)) * 0.22) / 4), calc((100vw - var(--project-width)) * 0.22 / 4));
+  height: max(calc((var(--main-project-height) - (100vw - var(--project-width)) * 0.22) / (var(--project-number) - 1)), calc((100vw - var(--project-width)) * 0.22 / 4));
 }
 .project {
   position: relative;
@@ -512,7 +516,8 @@ header {
 .project-container input:nth-of-type(2):checked ~ .project-slider ul:not(:hover) li:nth-child(2),
 .project-container input:nth-of-type(3):checked ~ .project-slider ul:not(:hover) li:nth-child(3),
 .project-container input:nth-of-type(4):checked ~ .project-slider ul:not(:hover) li:nth-child(4),
-.project-container input:nth-of-type(5):checked ~ .project-slider ul:not(:hover) li:nth-child(5) {
+.project-container input:nth-of-type(5):checked ~ .project-slider ul:not(:hover) li:nth-child(5),
+.project-container input:nth-of-type(6):checked ~ .project-slider ul:not(:hover) li:nth-child(6)  {
   height: calc((100vw - var(--project-width)) * 0.22);
   z-index: 1;
 }
@@ -521,7 +526,8 @@ header {
 .project-container input:nth-of-type(2):checked ~ .project-slider ul:not(:hover) li:nth-child(2)::after,
 .project-container input:nth-of-type(3):checked ~ .project-slider ul:not(:hover) li:nth-child(3)::after,
 .project-container input:nth-of-type(4):checked ~ .project-slider ul:not(:hover) li:nth-child(4)::after,
-.project-container input:nth-of-type(5):checked ~ .project-slider ul:not(:hover) li:nth-child(5)::after {
+.project-container input:nth-of-type(5):checked ~ .project-slider ul:not(:hover) li:nth-child(5)::after,
+.project-container input:nth-of-type(6):checked ~ .project-slider ul:not(:hover) li:nth-child(6)::after {
   opacity: 0;
   z-index: -1;
 }
@@ -532,7 +538,8 @@ header {
 .project-container input:nth-of-type(2):checked ~ .main-project-container .main-project:nth-child(2),
 .project-container input:nth-of-type(3):checked ~ .main-project-container .main-project:nth-child(3),
 .project-container input:nth-of-type(4):checked ~ .main-project-container .main-project:nth-child(4),
-.project-container input:nth-of-type(5):checked ~ .main-project-container .main-project:nth-child(5) {
+.project-container input:nth-of-type(5):checked ~ .main-project-container .main-project:nth-child(5),
+.project-container input:nth-of-type(6):checked ~ .main-project-container .main-project:nth-child(6) {
   opacity: 1;
   z-index: 1;
 }
@@ -800,7 +807,7 @@ footer {
   .project-slider ul li {
     float: left;
     display: inline-block;
-    width: calc((100vw - var(--project-width)) / 8);
+    width: calc((100vw - var(--project-width)) / (var(--project-number) - 1) / 2);
     height: 100%;
   }
   .project-slider ul li::after {
@@ -809,7 +816,7 @@ footer {
   }
   .project-slider ul:hover li {
     height: 100%;
-    width: calc((100vw - var(--project-width)) / 8);
+    width: calc((100vw - var(--project-width)) / (var(--project-number) - 1) / 2);
   }
   .project {
     height: 100%;
@@ -820,7 +827,8 @@ footer {
   .project-container input:nth-of-type(2):checked ~ .project-slider ul:not(:hover) li:nth-child(2),
   .project-container input:nth-of-type(3):checked ~ .project-slider ul:not(:hover) li:nth-child(3),
   .project-container input:nth-of-type(4):checked ~ .project-slider ul:not(:hover) li:nth-child(4),
-  .project-container input:nth-of-type(5):checked ~ .project-slider ul:not(:hover) li:nth-child(5) {
+  .project-container input:nth-of-type(5):checked ~ .project-slider ul:not(:hover) li:nth-child(5),
+  .project-container input:nth-of-type(6):checked ~ .project-slider ul:not(:hover) li:nth-child(6) {
     height: 100%;
     width: calc((100vw - var(--project-width)) / 2);
     z-index: 1;

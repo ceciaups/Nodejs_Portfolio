@@ -3,16 +3,17 @@ window.onload = function() {
   const navBar = document.getElementById("nav-bar");
   const navToggle = document.getElementById("nav-toggle");
   const contactForm = document.getElementById("contact-form");
+  const slider = document.getElementById("slider-ul");
+  var mobile = window.matchMedia("(max-width: 425px)");
   var alertContainer = document.getElementById("alert-container");
   var alert = document.getElementById("alert");
   var play;
-  var mobile = window.matchMedia("(max-width: 425px)");
+  var slideTime = 5000; // Change slides every 5 seconds
 
   // Event Listener
   navToggle.addEventListener("click", toggleMenu, false);
   window.addEventListener("scroll", reveal);
   reveal();
-  mobile.addEventListener("change", slideshow);
   contactForm.onsubmit = function() {
     return sendMail();
   };
@@ -22,24 +23,26 @@ window.onload = function() {
     navBar.classList.toggle("opened");
   }
 
-  function slideshow(mobile) {
-    if (mobile.matches) {
-      var secProjects = document.getElementById("sec-projects");
-      if (secProjects.classList.contains("active")) {
-        
-        var slider = document.getElementById("slider-ul");
-        play = playSlides(5000);
+  function slideshow() {
+    var secProjects = document.getElementById("sec-projects");
+    if (secProjects.classList.contains("active")) {
+      
+      var slider = document.getElementById("slider-ul");
+      play = playSlides(slideTime);
+      // console.log(mobile);
+      if (mobile.matches) {
         slider.addEventListener("click", function() {
           clearInterval(play);
           setTimeout(function() {
-            play = playSlides(5000);
-          }, 5000);
+            play = playSlides(slideTime);
+          }, slideTime);
           
         })
       }
-    }
-    else {
-      clearInterval(play);
+      else {
+        slider.addEventListener("mouseover", () => { clearInterval(play); });
+        slider.addEventListener("mouseout", () => { play = playSlides(slideTime); });
+      }
     }
   }
   
@@ -122,7 +125,7 @@ window.onload = function() {
         if (!reveals[i].classList.contains("active")) {
           reveals[i].classList.add("active");
           if (reveals[i].id == "sec-projects")
-            slideshow(mobile);
+            slideshow();
         }
       }
       else {

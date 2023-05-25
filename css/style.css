@@ -246,7 +246,7 @@ header {
 .tl-container {
   position: inherit;
   display: grid;
-  grid-template-rows: repeat(7, max(calc(16em - 10vw), 5.5em));
+  grid-template-rows: repeat(6, max(calc(16em - 10vw), 5.5em));
   align-items: center;
 }
 .tl-container::before, .tl-container::after {
@@ -503,7 +503,7 @@ header {
   opacity: 0.5;
 }
 .project-slider ul:hover li {
-  height: max(calc((var(--main-project-height) - (100vw - var(--project-width)) * 0.22) / (var(--project-number) - 1)), calc((100vw - var(--project-width)) * 0.22 / 4));
+  height: max(calc((var(--main-project-height) - (100vw - var(--project-width)) * 0.22) / (var(--project-number) - 1)), calc((100vw - var(--project-width)) * 0.22 / (var(--project-number) - 1)));
 }
 .project {
   position: relative;
@@ -758,7 +758,7 @@ footer {
     padding: 0 0 0 3em;
   }
   .tl-container {
-    grid-template-rows: repeat(5, max(calc(18em - 16vw), 8em));
+    grid-template-rows: repeat(6, max(calc(18em - 16vw), 8em));
   }
   #sec-projects {
     padding: calc(var(--header-height) / 2) 1.75em 0 1.75em;

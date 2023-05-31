@@ -41,13 +41,6 @@ window.onload = function() {
   function toggleMenu() {
     navBar.classList.toggle("opened");
   }
-
-  function slideshow() {
-    var secProjects = document.getElementById("sec-projects");
-    if (secProjects.classList.contains("active")) {
-      var slider = document.getElementById("slider-ul");
-    }
-  }
   
   function playSlides(time) {
     sliderPlay.style.display = "none";

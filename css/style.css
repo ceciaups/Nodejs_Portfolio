@@ -102,7 +102,7 @@ a:hover, .button:hover {
   --dark-green: #333D29;
   --orange: #D08644;
   --white: #FCF6F6;
-  --project-number: 6;
+  --project-number: 7;
 }
 
 /* 2. HEADER STYLES */
@@ -422,6 +422,9 @@ header {
 .main-catvsdog::after {
   background-image: url(../images/catvsdog.jpeg);
 }
+.main-expense::after {
+  background-image: url(../images/expense-tracker.jpeg);
+}
 .main-fyp::after {
   background-image: url(../images/fyp.png);
 }
@@ -518,7 +521,8 @@ header {
 .project-container input:nth-of-type(3):checked ~ .project-slider ul:not(:hover) li:nth-child(3),
 .project-container input:nth-of-type(4):checked ~ .project-slider ul:not(:hover) li:nth-child(4),
 .project-container input:nth-of-type(5):checked ~ .project-slider ul:not(:hover) li:nth-child(5),
-.project-container input:nth-of-type(6):checked ~ .project-slider ul:not(:hover) li:nth-child(6)  {
+.project-container input:nth-of-type(6):checked ~ .project-slider ul:not(:hover) li:nth-child(6),
+.project-container input:nth-of-type(7):checked ~ .project-slider ul:not(:hover) li:nth-child(7)  {
   height: calc((100vw - var(--project-width)) * 0.22);
   z-index: 1;
 }
@@ -528,7 +532,8 @@ header {
 .project-container input:nth-of-type(3):checked ~ .project-slider ul:not(:hover) li:nth-child(3)::after,
 .project-container input:nth-of-type(4):checked ~ .project-slider ul:not(:hover) li:nth-child(4)::after,
 .project-container input:nth-of-type(5):checked ~ .project-slider ul:not(:hover) li:nth-child(5)::after,
-.project-container input:nth-of-type(6):checked ~ .project-slider ul:not(:hover) li:nth-child(6)::after {
+.project-container input:nth-of-type(6):checked ~ .project-slider ul:not(:hover) li:nth-child(6)::after,
+.project-container input:nth-of-type(7):checked ~ .project-slider ul:not(:hover) li:nth-child(7)::after {
   opacity: 0;
   z-index: -1;
 }
@@ -540,7 +545,8 @@ header {
 .project-container input:nth-of-type(3):checked ~ .main-project-container .main-project:nth-child(3),
 .project-container input:nth-of-type(4):checked ~ .main-project-container .main-project:nth-child(4),
 .project-container input:nth-of-type(5):checked ~ .main-project-container .main-project:nth-child(5),
-.project-container input:nth-of-type(6):checked ~ .main-project-container .main-project:nth-child(6) {
+.project-container input:nth-of-type(6):checked ~ .main-project-container .main-project:nth-child(6),
+.project-container input:nth-of-type(7):checked ~ .main-project-container .main-project:nth-child(7) {
   opacity: 1;
   z-index: 1;
 }
@@ -846,7 +852,8 @@ footer {
   .project-container input:nth-of-type(3):checked ~ .project-slider ul:not(:hover) li:nth-child(3),
   .project-container input:nth-of-type(4):checked ~ .project-slider ul:not(:hover) li:nth-child(4),
   .project-container input:nth-of-type(5):checked ~ .project-slider ul:not(:hover) li:nth-child(5),
-  .project-container input:nth-of-type(6):checked ~ .project-slider ul:not(:hover) li:nth-child(6) {
+  .project-container input:nth-of-type(6):checked ~ .project-slider ul:not(:hover) li:nth-child(6),
+  .project-container input:nth-of-type(7):checked ~ .project-slider ul:not(:hover) li:nth-child(7) {
     height: 100%;
     width: calc((100vw - var(--project-width)) / 2);
     z-index: 1;

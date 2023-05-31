@@ -4,6 +4,10 @@ window.onload = function() {
   const navToggle = document.getElementById("nav-toggle");
   const contactForm = document.getElementById("contact-form");
   const slider = document.getElementById("slider-ul");
+  const sliderPlay = document.getElementById("slider-play");
+  const sliderPause = document.getElementById("slider-pause");
+  const sliderBack = document.getElementById("slider-back");
+  const sliderFor = document.getElementById("slider-for");
   var mobile = window.matchMedia("(max-width: 425px)");
   var alertContainer = document.getElementById("alert-container");
   var alert = document.getElementById("alert");
@@ -12,6 +16,21 @@ window.onload = function() {
 
   // Event Listener
   navToggle.addEventListener("click", toggleMenu, false);
+  sliderPlay.addEventListener("click", () => { play = playSlides(slideTime); });
+  sliderPause.addEventListener("click", () => { stopSlides(); });
+  sliderBack.addEventListener("click", () => { skipSlide(-1); });
+  sliderFor.addEventListener("click", () => { skipSlide(1); });
+  if (mobile.matches) {
+    slider.addEventListener("click", () => { stopSlides(); })
+  }
+  else {
+    slider.addEventListener("mouseover", () => { 
+      if (play) {
+        stopSlides();
+        slider.addEventListener("mouseleave", () => { play = playSlides(slideTime); }, { once: true });
+      }
+     });
+  }
   window.addEventListener("scroll", reveal);
   reveal();
   contactForm.onsubmit = function() {
@@ -26,27 +45,13 @@ window.onload = function() {
   function slideshow() {
     var secProjects = document.getElementById("sec-projects");
     if (secProjects.classList.contains("active")) {
-      
       var slider = document.getElementById("slider-ul");
-      play = playSlides(slideTime);
-      // console.log(mobile);
-      if (mobile.matches) {
-        slider.addEventListener("click", function() {
-          clearInterval(play);
-          setTimeout(function() {
-            play = playSlides(slideTime);
-          }, slideTime);
-          
-        })
-      }
-      else {
-        slider.addEventListener("mouseover", () => { clearInterval(play); });
-        slider.addEventListener("mouseout", () => { play = playSlides(slideTime); });
-      }
     }
   }
   
   function playSlides(time) {
+    sliderPlay.style.display = "none";
+    sliderPause.style.display = "block";
     return setInterval(function() {
       var sliders = document.getElementsByClassName("slider-radio");
       for (var i = 0; i < sliders.length; i++) {
@@ -60,6 +65,33 @@ window.onload = function() {
         }
       }
     }, time);
+  }
+
+  function stopSlides() {
+    clearInterval(play);
+    play = null;
+    sliderPause.style.display = "none";
+    sliderPlay.style.display = "block";
+  }
+
+  function skipSlide(number) {
+    let sliders = document.getElementsByClassName("slider-radio");
+    for (let i = 0; i < sliders.length; i++) {
+      if (sliders[i].checked) {
+        sliders[i].checked = false;
+        let j = i + number;
+        if (j < 0)
+          j = sliders.length - 1;
+        else if (j > sliders.length - 1)
+          j = 0;
+        sliders[j].checked = true;
+        break;
+      }
+    }
+    if (play) {
+      stopSlides();
+      play = playSlides(slideTime);
+    }
   }
 
   // Contact Form Function
@@ -124,14 +156,13 @@ window.onload = function() {
       if (elementTop < windowHeight && elementBottom > 0) {
         if (!reveals[i].classList.contains("active")) {
           reveals[i].classList.add("active");
-          if (reveals[i].id == "sec-projects")
-            slideshow();
         }
       }
       else {
         reveals[i].classList.remove("active");
-        if (reveals[i].id == "sec-projects")
-          clearInterval(play);
+        if (reveals[i].id == "sec-projects") {
+          stopSlides();
+        }
       }
     }
   }

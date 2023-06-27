@@ -32,7 +32,7 @@ html {
   vertical-align: baseline;
   background: transparent;
   text-decoration: none;
-  transition: all 0.2s linear;
+  transition: all 0.5s linear;
 }
 h1, h2, h3, h4, h5 {
   font-family: 'Kaushan Script', cursive;
@@ -102,7 +102,7 @@ a:hover, .button:hover {
   --dark-green: #333D29;
   --orange: #D08644;
   --white: #FCF6F6;
-  --project-number: 7;
+  --project-number: 8;
 }
 
 /* 2. HEADER STYLES */
@@ -419,6 +419,9 @@ header {
 .main-movie::after {
   background-image: url(../images/movie_night.png);
 }
+.main-journal::after {
+  background-image: url(../images/journal.png);
+}
 .main-catvsdog::after {
   background-image: url(../images/catvsdog.jpeg);
 }
@@ -494,7 +497,7 @@ header {
   position: relative;
   width: 100%;
   height: max(calc((var(--main-project-height) - (100vw - var(--project-width)) * 0.22) / (var(--project-number) - 1)), calc((100vw - var(--project-width)) * 0.22 / (var(--project-number) - 1)));
-  transition: all 0.2s;
+  transition: all 0.5s;
 }
 .project-slider ul li::after {
   content: '';
@@ -522,7 +525,8 @@ header {
 .project-container input:nth-of-type(4):checked ~ .project-slider ul:not(:hover) li:nth-child(4),
 .project-container input:nth-of-type(5):checked ~ .project-slider ul:not(:hover) li:nth-child(5),
 .project-container input:nth-of-type(6):checked ~ .project-slider ul:not(:hover) li:nth-child(6),
-.project-container input:nth-of-type(7):checked ~ .project-slider ul:not(:hover) li:nth-child(7)  {
+.project-container input:nth-of-type(7):checked ~ .project-slider ul:not(:hover) li:nth-child(7),
+.project-container input:nth-of-type(8):checked ~ .project-slider ul:not(:hover) li:nth-child(8) {
   height: calc((100vw - var(--project-width)) * 0.22);
   z-index: 1;
 }
@@ -533,7 +537,8 @@ header {
 .project-container input:nth-of-type(4):checked ~ .project-slider ul:not(:hover) li:nth-child(4)::after,
 .project-container input:nth-of-type(5):checked ~ .project-slider ul:not(:hover) li:nth-child(5)::after,
 .project-container input:nth-of-type(6):checked ~ .project-slider ul:not(:hover) li:nth-child(6)::after,
-.project-container input:nth-of-type(7):checked ~ .project-slider ul:not(:hover) li:nth-child(7)::after {
+.project-container input:nth-of-type(7):checked ~ .project-slider ul:not(:hover) li:nth-child(7)::after,
+.project-container input:nth-of-type(8):checked ~ .project-slider ul:not(:hover) li:nth-child(8)::after {
   opacity: 0;
   z-index: -1;
 }
@@ -546,7 +551,8 @@ header {
 .project-container input:nth-of-type(4):checked ~ .main-project-container .main-project:nth-child(4),
 .project-container input:nth-of-type(5):checked ~ .main-project-container .main-project:nth-child(5),
 .project-container input:nth-of-type(6):checked ~ .main-project-container .main-project:nth-child(6),
-.project-container input:nth-of-type(7):checked ~ .main-project-container .main-project:nth-child(7) {
+.project-container input:nth-of-type(7):checked ~ .main-project-container .main-project:nth-child(7),
+.project-container input:nth-of-type(8):checked ~ .main-project-container .main-project:nth-child(8) {
   opacity: 1;
   z-index: 1;
 }
@@ -853,7 +859,8 @@ footer {
   .project-container input:nth-of-type(4):checked ~ .project-slider ul:not(:hover) li:nth-child(4),
   .project-container input:nth-of-type(5):checked ~ .project-slider ul:not(:hover) li:nth-child(5),
   .project-container input:nth-of-type(6):checked ~ .project-slider ul:not(:hover) li:nth-child(6),
-  .project-container input:nth-of-type(7):checked ~ .project-slider ul:not(:hover) li:nth-child(7) {
+  .project-container input:nth-of-type(7):checked ~ .project-slider ul:not(:hover) li:nth-child(7),
+  .project-container input:nth-of-type(8):checked ~ .project-slider ul:not(:hover) li:nth-child(8) {
     height: 100%;
     width: calc((100vw - var(--project-width)) / 2);
     z-index: 1;
